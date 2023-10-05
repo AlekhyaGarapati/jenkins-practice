@@ -1,16 +1,19 @@
-pipeline {
-    agent any
-    stages {
-        stage('stage1') {
-            steps {
-                echo 'Hello World'
-            }
+pipeline{
+agent {node {label:agent1}}
+stages {
+    stage ('build'){
+        steps{
+            echo "build"
         }
-            stage('stage2') {
-            steps {
-                echo 'Hello Alekhya'
-            }
+    }
+    stage ('scan') {
+        steps{
+            echo "scan"
         }
-        
+    }
+    stage ("deploy"){
+        step {
+            echo "deploy"
+        }
     }
 }
