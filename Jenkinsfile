@@ -4,6 +4,10 @@ stages {
     stage ('build'){
         steps{
             echo "build"
+            sh '''
+             ls -ltr
+             pwd
+            '''
         }
     }
     stage ('scan') {
