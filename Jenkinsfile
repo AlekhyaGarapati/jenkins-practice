@@ -17,4 +17,15 @@ stages {
         }
     }
 }
+post {
+    always{
+        echo "i will execute always after job completion"
+    }
+    success {
+        echo "i will execute only after job completion is success"
+    }
+    failure {
+        echo "i will execute only after job completion is failure"
+    }
+}
 }
