@@ -12,7 +12,7 @@ stages {
         }
     }
     stage ("deploy"){
-        step {
+        steps{
             echo "deploy"
         }
     }
