@@ -1,6 +1,14 @@
 pipeline{
 agent {node { label 'agent1'} }
+environment{
+    user 'alekhya'
+}
 stages {
+    stage ('environment') {
+        steps{
+            sh 'printenv'
+        }
+    }
     stage ('build'){
         steps{
             echo "build from webhook test"
