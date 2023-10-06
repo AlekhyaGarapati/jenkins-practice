@@ -6,7 +6,10 @@ environment{
 stages {
     stage ('environment') {
         steps{
-            sh 'printenv'
+            echo "printenv - prints all environemnt variables. We can use them in program if needed"
+            sh 'printenv' 
+            echo "printenv.user - prints user name declared above from env variables"
+            sh 'printenv.user'
         }
     }
     stage ('build'){
