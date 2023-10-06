@@ -3,6 +3,9 @@ agent {node { label 'agent1'} }
 environment{
     user = 'alekhya'
 }
+environment {
+auth = credentials ('ssh-auth')
+}
 stages {
     stage ('environment') {
         steps{
