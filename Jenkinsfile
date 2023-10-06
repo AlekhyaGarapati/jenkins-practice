@@ -5,7 +5,7 @@ environment{
 }
     
 stages {
-    stage ('environment') {
+    stage ('example') {
         environment{
             auth = credentials('ssh-auth')
         }
