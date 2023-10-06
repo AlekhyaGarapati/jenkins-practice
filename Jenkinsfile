@@ -5,11 +5,11 @@ environment{
 }
     
 stages {
-    stage ('environment') {
-        environemnt{
+    stage ('environment') {  
+        steps{
+            environemnt{
             auth = credentials('ssh-auth')
         }
-        steps{
             echo "printenv - prints all environemnt variables. We can use them in program if needed"
             sh 'printenv' 
             sh 'echo "user name : $USER"'
