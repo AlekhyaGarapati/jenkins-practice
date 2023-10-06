@@ -19,9 +19,9 @@ parameters {
 stages {
     stage ('parameters') {
         steps{
-            echo 'Hello ${params.PERSON}'
-            echo 'choice to select ${params.choice}'
-            echo 'boolean ${params.TOGGLE}'
+            echo "Hello ${params.PERSON}"
+            echo "choice to select ${params.choice}"
+            echo "boolean ${params.TOGGLE}"
         }
     }
     stage ('envexample1') {
