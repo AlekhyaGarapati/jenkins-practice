@@ -8,8 +8,7 @@ stages {
         steps{
             echo "printenv - prints all environemnt variables. We can use them in program if needed"
             sh 'printenv' 
-            echo "printenv.user - prints user name declared above from env variables"
-            sh 'printenv.USER'
+            sh 'echo "user name : $USER"'
         }
     }
     stage ('build'){
