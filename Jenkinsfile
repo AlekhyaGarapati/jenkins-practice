@@ -5,16 +5,23 @@ environment{
 }
     
 stages {
-    stage ('example') {
-        environment{
-            auth = credentials('ssh-auth')
-        }
+    stage ('envexample1') {
         steps{
             echo "printenv - prints all environemnt variables. We can use them in program if needed"
             sh 'printenv' 
             sh 'echo "user name : $USER"'
         }
     }
+    stage ('envexample2') {
+        environment{
+          auth = credentials('ssh-auth')
+        }
+        steps{
+            sh 'printenv'
+        }
+    }
+
+
     stage ('build'){
         steps{
             echo "build from webhook test"
