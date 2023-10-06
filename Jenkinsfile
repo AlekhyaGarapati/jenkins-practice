@@ -2,11 +2,13 @@ pipeline{
 agent {node { label 'agent1'} }
 environment{
     user = 'alekhya'
-    auth = credentials('ssh-auth')
 }
-
+    
 stages {
     stage ('environment') {
+        environemnt{
+            auth = credentials('ssh-auth')
+        }
         steps{
             echo "printenv - prints all environemnt variables. We can use them in program if needed"
             sh 'printenv' 
