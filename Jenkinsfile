@@ -12,14 +12,15 @@ stages {
             sh 'echo "user name : $USER"'
         }
     }
-    stage ('envexample2') {
-        environment{
-          auth = credentials('ssh-auth')
+    stage('Example') {
+            environment { 
+                AUTH = credentials('ssh-auth') 
+            }
+            steps {
+                sh 'printenv'
+            }
         }
-        steps{
-            sh 'printenv'
-        }
-    }
+
 
 
     stage ('build'){
