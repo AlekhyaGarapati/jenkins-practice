@@ -3,7 +3,7 @@ agent {node { label 'agent1'} }
 stages {
     stage ('build'){
         steps{
-            echo "build"
+            echo "build from webhook"
             sh '''
              ls -ltr
              pwd
