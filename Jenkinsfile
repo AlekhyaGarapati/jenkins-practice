@@ -17,6 +17,20 @@ parameters {
 
     
 stages {
+
+    stage('input') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${params.PERSON}, nice to meet you."
+            }
+        }
+
     stage ('parameters') {
         steps{
             echo "Hello ${params.PERSON}"
