@@ -20,7 +20,7 @@ stages {
     stage ('parameters') {
         steps{
             echo "Hello ${params.PERSON}"
-            echo "choice to select ${params.choice}"
+            echo "choice to select ${params.choices}"
             echo "boolean ${params.TOGGLE}"
         }
     }
