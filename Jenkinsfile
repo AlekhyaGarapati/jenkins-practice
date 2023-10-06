@@ -18,6 +18,44 @@ parameters {
     
 stages {
 
+    stage ('parallel stage')
+    {
+        parallel{
+            stage ('stage A')
+            {
+                steps {
+                    echo 'on stage A'
+                    sleep 10
+                }
+            }
+            stage ('stage B')
+            {
+                steps{
+                    echo 'on stage B'
+                    sleep 10
+                }
+            }
+            stage ('stage C'){
+                stages{
+                    stage ('stage D') {
+                        steps {
+                            echo 'stage D - sequential'
+                            sleep 10
+                        }
+                    }
+                    stage ('stage E') {
+                        steps {
+                            echo 'stage E - sequential'
+                            sleep 10
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    
+    
     stage('input') {
             input {
                 message "Should we continue?"
