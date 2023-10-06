@@ -2,7 +2,6 @@ pipeline{
 agent {node { label 'agent1'} }
 environment{
     user = 'alekhya'
-    auth = credentials ('ssh-auth')
 }
 
 stages {
