@@ -1,7 +1,7 @@
 pipeline{
 agent {node { label 'agent1'} }
 environment{
-    user 'alekhya'
+    user = 'alekhya'
 }
 stages {
     stage ('environment') {
